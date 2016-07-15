@@ -1,0 +1,65 @@
+# 一张网页，要经历怎样的过程，才能抵达用户面前？
+一位新人，要经历怎样的成长，才能站在技术之巅？
+探寻这里的秘密；
+体验这里的挑战；
+成为这里的主人；
+加入百度，加入网页搜索，你，可以影响世界。
+ (, #)
+# 请将简历发送至 %c ps_recruiter@baidu.com（ 邮件标题请以“姓名-应聘XX职位-来自console”命名） color:red (, #)
+# 职位介绍：http://dwz.cn/hr2013 (, #)
+
+Config:
+ task: performance
+ userAgent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/535.11 (KHTML, like Gecko) Chrome/17.0.963.12 Safari/535.11
+ wait: 0
+ consolePrefix: #
+ verbose: true
+ url: https://www.baidu.com
+ configFile: confess/config.json
+
+Elapsed load time:    359ms
+   # of resources:       17
+
+ Fastest resource:     14ms; https://www.baidu.com/his?wd=&from=pc_...469960928_1468496429949&_=1468496429950
+ Slowest resource:    114ms; https://ss1.bdstatic.com/5eN1bjq8AAUYm.../protocol/https/soutu/js/tu_cfd9e720.js
+  Total resources:   767-ms
+
+Smallest resource:      94b; https://www.baidu.com/his?wd=&from=pc_...469960928_1468496429949&_=1468496429950
+ Largest resource:   39696b; https://ss1.bdstatic.com/5eN1bjq8AAUYm...ol/https/sug/js/bdsug_async_50f4eb41.js
+  Total resources:  153020b; (at least)
+
+  1|--------------------=====                                                                               |
+  2|                     ------------                                                                       |
+  3|                      ------------                                                                      |
+  4|                       ------------------=                                                              |
+  5|                               ---------------------=                                                   |
+  6|                               --------------------=                                                    |
+  7|                                -----------------------=====                                            |
+  8|                                                 ------=====                                            |
+  9|                                                  -----                                                 |
+ 10|                                                                ------------=                           |
+ 11|                                                                   ---------                            |
+ 12|                                                                   --------==========================   |
+ 13|                                                                     ------                             |
+ 14|                                                                         --------                       |
+ 15|                                                                          -------                       |
+ 16|                                                                               ----=                    |
+ 17|                                                                                                        |
+
+  1:     82ms;   28005b; https://www.baidu.com/
+  2:     40ms;    7877b; https://www.baidu.com/img/bd_logo1.png
+  3:     38ms;     705b; https://www.baidu.com/img/baidu_jgylogo3.gif
+  4:     64ms;    1306b; https://ss1.bdstatic.com/5eN1bjq8AAUYm2z...ttps/jquery/jquery-1.10.2.min_f2fb5194.js
+  5:     71ms;    3223b; https://ss1.bdstatic.com/5eN1bjq8AAUYm2z.../https/home/img/qrcode/zbios_62c636fe.png
+  6:     70ms;    3224b; https://ss1.bdstatic.com/5eN1bjq8AAUYm2z.../https/home/img/qrcode/nuomi_510f7472.png
+  7:     90ms;     956b; https://ss1.bdstatic.com/5eN1bjq8AAUYm2z...tocol/https/global/img/icons_0e814c16.png
+  8:     34ms;    1315b; https://ss1.bdstatic.com/5eN1bjq8AAUYm2z...ps/global/js/all_async_search_0542f977.js
+  9:     15ms;    1680b; https://ss1.bdstatic.com/5eN1bjq8AAUYm2z...ol/https/plugins/every_cookie_aa168cb4.js
+ 10:     39ms;   24931b; https://ss1.bdstatic.com/5eN1bjq8AAUYm2z...tps/home/js/nu_instant_search_a579b872.js
+ 11:     29ms;   10167b; https://ss1.bdstatic.com/5eN1bjq8AAUYm2z...tocol/https/plugins/swfobject_c1c7185a.js
+ 12:    114ms;   12746b; https://ss1.bdstatic.com/5eN1bjq8AAUYm2z...ic/protocol/https/soutu/js/tu_cfd9e720.js
+ 13:     19ms;   39696b; https://ss1.bdstatic.com/5eN1bjq8AAUYm2z...ocol/https/sug/js/bdsug_async_50f4eb41.js
+ 14:     26ms;    1100b; https://ss1.bdstatic.com/5eN1bjq8AAUYm2z...https/global/img/quickdelete_9c14b01a.png
+ 15:     22ms;   15995b; https://ss1.bdstatic.com/5eN1bjq8AAUYm2z...rotocol/https/baiduia/baiduia_b45d552b.js
+ 16:     14ms;      94b; https://www.baidu.com/his?wd=&from=pc_we...79469960928_1468496429949&_=1468496429950
+ 17:      -ms;       -b; https://ss1.bdstatic.com/5eN1bjq8AAUYm2z...otocol/https/soutu/css/soutu_bff2306f.css

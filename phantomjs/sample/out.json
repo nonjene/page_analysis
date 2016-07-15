@@ -1,0 +1,664 @@
+{
+    "log": {
+        "version": "1.2",
+        "creator": {
+            "name": "PhantomJS",
+            "version": "2.1.1"
+        },
+        "pages": [
+            {
+                "startedDateTime": "2016-07-12T16:39:10.984Z",
+                "id": "https://www.google.com",
+                "title": "Google",
+                "pageTimings": {
+                    "onLoad": 5896
+                }
+            }
+        ],
+        "entries": [
+            {
+                "startedDateTime": "2016-07-12T16:39:10.984Z",
+                "time": 2996,
+                "request": {
+                    "method": "GET",
+                    "url": "https://www.google.com/",
+                    "httpVersion": "HTTP/1.1",
+                    "cookies": [],
+                    "headers": [
+                        {
+                            "name": "Accept",
+                            "value": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"
+                        },
+                        {
+                            "name": "User-Agent",
+                            "value": "Mozilla/5.0 (Macintosh; Intel Mac OS X) AppleWebKit/538.1 (KHTML, like Gecko) PhantomJS/2.1.1 Safari/538.1"
+                        }
+                    ],
+                    "queryString": [],
+                    "headersSize": -1,
+                    "bodySize": -1
+                },
+                "response": {
+                    "status": 302,
+                    "statusText": "Found",
+                    "httpVersion": "HTTP/1.1",
+                    "cookies": [],
+                    "headers": [
+                        {
+                            "name": "Location",
+                            "value": "http://www.google.com.hk/url?sa=p&hl=zh-CN&pref=hkredirect&pval=yes&q=http://www.google.com.hk/%3Fgws_rd%3Dcr&ust=1468341583491377&usg=AFQjCNHISVMNM3fQKEAE19jNo5FwYz8XOA"
+                        },
+                        {
+                            "name": "Cache-Control",
+                            "value": "private"
+                        },
+                        {
+                            "name": "Content-Type",
+                            "value": "text/html; charset=UTF-8"
+                        },
+                        {
+                            "name": "P3P",
+                            "value": "CP=\"This is not a P3P policy! See https://www.google.com/support/accounts/answer/151657?hl=en for more info.\""
+                        },
+                        {
+                            "name": "Date",
+                            "value": "Tue, 12 Jul 2016 16:39:13 GMT"
+                        },
+                        {
+                            "name": "Server",
+                            "value": "gws"
+                        },
+                        {
+                            "name": "Content-Length",
+                            "value": "390"
+                        },
+                        {
+                            "name": "X-XSS-Protection",
+                            "value": "1; mode=block"
+                        },
+                        {
+                            "name": "X-Frame-Options",
+                            "value": "SAMEORIGIN"
+                        },
+                        {
+                            "name": "Set-Cookie",
+                            "value": "NID=82=HSKRRGQWnIYM5nJ_QoleGkVnBnZrQi2mVexBXe6yGQxnUGGDVGHohTvvQPmbu7J5gF1oM2r2z-CQn4xmY-5qPlni5sSe__1BCez_GO7bpISVEjCCFrHJgTMK8SVjBafH; expires=Wed, 11-Jan-2017 16:39:13 GMT; path=/; domain=.google.com; HttpOnly"
+                        },
+                        {
+                            "name": "Alternate-Protocol",
+                            "value": "443:quic"
+                        },
+                        {
+                            "name": "Alt-Svc",
+                            "value": "quic=\":443\"; ma=2592000; v=\"36,35,34,33,32,31,30,29,28,27,26,25\""
+                        }
+                    ],
+                    "redirectURL": "",
+                    "headersSize": -1,
+                    "bodySize": 390,
+                    "content": {
+                        "size": 390,
+                        "mimeType": "text/html; charset=UTF-8"
+                    }
+                },
+                "cache": {},
+                "timings": {
+                    "blocked": 0,
+                    "dns": -1,
+                    "connect": -1,
+                    "send": 0,
+                    "wait": 2981,
+                    "receive": 15,
+                    "ssl": -1
+                },
+                "pageref": "https://www.google.com"
+            },
+            {
+                "startedDateTime": "2016-07-12T16:39:13.966Z",
+                "time": 805,
+                "request": {
+                    "method": "GET",
+                    "url": "http://www.google.com.hk/url?sa=p&hl=zh-CN&pref=hkredirect&pval=yes&q=http://www.google.com.hk/%3Fgws_rd%3Dcr&ust=1468341583491377&usg=AFQjCNHISVMNM3fQKEAE19jNo5FwYz8XOA",
+                    "httpVersion": "HTTP/1.1",
+                    "cookies": [],
+                    "headers": [
+                        {
+                            "name": "Accept",
+                            "value": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"
+                        },
+                        {
+                            "name": "User-Agent",
+                            "value": "Mozilla/5.0 (Macintosh; Intel Mac OS X) AppleWebKit/538.1 (KHTML, like Gecko) PhantomJS/2.1.1 Safari/538.1"
+                        }
+                    ],
+                    "queryString": [],
+                    "headersSize": -1,
+                    "bodySize": -1
+                },
+                "response": {
+                    "status": 302,
+                    "statusText": "Found",
+                    "httpVersion": "HTTP/1.1",
+                    "cookies": [],
+                    "headers": [
+                        {
+                            "name": "Location",
+                            "value": "http://www.google.com.hk/?gws_rd=cr"
+                        },
+                        {
+                            "name": "Cache-Control",
+                            "value": "private"
+                        },
+                        {
+                            "name": "Content-Type",
+                            "value": "text/html; charset=UTF-8"
+                        },
+                        {
+                            "name": "P3P",
+                            "value": "CP=\"This is not a P3P policy! See https://www.google.com/support/accounts/answer/151657?hl=en for more info.\""
+                        },
+                        {
+                            "name": "Date",
+                            "value": "Tue, 12 Jul 2016 16:39:14 GMT"
+                        },
+                        {
+                            "name": "Server",
+                            "value": "gws"
+                        },
+                        {
+                            "name": "Content-Length",
+                            "value": "232"
+                        },
+                        {
+                            "name": "X-XSS-Protection",
+                            "value": "1; mode=block"
+                        },
+                        {
+                            "name": "Set-Cookie",
+                            "value": "NID=82=NdpJcUOeWetytgoHtbp0wIGwuzR4s4tgL5SxtlqWrnK_tf6VRzcKokl2rZvod_XcmepFaGK-kVz5kEXMZG8VW6u05RM65fs91Mlsvfgy9Mks3WkG_GGmJqN6a6ozGhip; expires=Wed, 11-Jan-2017 16:39:14 GMT; path=/; domain=.google.com.hk; HttpOnly"
+                        }
+                    ],
+                    "redirectURL": "",
+                    "headersSize": -1,
+                    "bodySize": 232,
+                    "content": {
+                        "size": 232,
+                        "mimeType": "text/html; charset=UTF-8"
+                    }
+                },
+                "cache": {},
+                "timings": {
+                    "blocked": 0,
+                    "dns": -1,
+                    "connect": -1,
+                    "send": 0,
+                    "wait": 790,
+                    "receive": 15,
+                    "ssl": -1
+                },
+                "pageref": "https://www.google.com"
+            },
+            {
+                "startedDateTime": "2016-07-12T16:39:14.757Z",
+                "time": 669,
+                "request": {
+                    "method": "GET",
+                    "url": "http://www.google.com.hk/?gws_rd=cr",
+                    "httpVersion": "HTTP/1.1",
+                    "cookies": [],
+                    "headers": [
+                        {
+                            "name": "Accept",
+                            "value": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"
+                        },
+                        {
+                            "name": "User-Agent",
+                            "value": "Mozilla/5.0 (Macintosh; Intel Mac OS X) AppleWebKit/538.1 (KHTML, like Gecko) PhantomJS/2.1.1 Safari/538.1"
+                        }
+                    ],
+                    "queryString": [],
+                    "headersSize": -1,
+                    "bodySize": -1
+                },
+                "response": {
+                    "status": 200,
+                    "statusText": "OK",
+                    "httpVersion": "HTTP/1.1",
+                    "cookies": [],
+                    "headers": [
+                        {
+                            "name": "Date",
+                            "value": "Tue, 12 Jul 2016 16:39:14 GMT"
+                        },
+                        {
+                            "name": "Expires",
+                            "value": "-1"
+                        },
+                        {
+                            "name": "Cache-Control",
+                            "value": "private, max-age=0"
+                        },
+                        {
+                            "name": "Content-Type",
+                            "value": "text/html; charset=UTF-8"
+                        },
+                        {
+                            "name": "P3P",
+                            "value": "CP=\"This is not a P3P policy! See https://www.google.com/support/accounts/answer/151657?hl=en for more info.\""
+                        },
+                        {
+                            "name": "Content-Encoding",
+                            "value": "gzip"
+                        },
+                        {
+                            "name": "Server",
+                            "value": "gws"
+                        },
+                        {
+                            "name": "X-XSS-Protection",
+                            "value": "1; mode=block"
+                        },
+                        {
+                            "name": "X-Frame-Options",
+                            "value": "SAMEORIGIN"
+                        },
+                        {
+                            "name": "Set-Cookie",
+                            "value": "NID=82=jmtfOlxscxvCygOSk6r2AHkH1PAdeJcWh_Krd7lfrOnJzph61glm85zh4CyPVXyQ_LoiZYBRo-NzQmtnd1KxRRBH17BrDfWNYMK0pXwWVWvnxYzB5-evGkRz9cs69J5C; expires=Wed, 11-Jan-2017 16:39:14 GMT; path=/; domain=.google.com.hk; HttpOnly"
+                        }
+                    ],
+                    "redirectURL": "",
+                    "headersSize": -1,
+                    "bodySize": 1462,
+                    "content": {
+                        "size": 1462,
+                        "mimeType": "text/html; charset=UTF-8"
+                    }
+                },
+                "cache": {},
+                "timings": {
+                    "blocked": 0,
+                    "dns": -1,
+                    "connect": -1,
+                    "send": 0,
+                    "wait": 408,
+                    "receive": 261,
+                    "ssl": -1
+                },
+                "pageref": "https://www.google.com"
+            },
+            {
+                "startedDateTime": "2016-07-12T16:39:15.412Z",
+                "time": 539,
+                "request": {
+                    "method": "GET",
+                    "url": "http://ssl.gstatic.com/gb/images/b_8d5afc09.png",
+                    "httpVersion": "HTTP/1.1",
+                    "cookies": [],
+                    "headers": [
+                        {
+                            "name": "Referer",
+                            "value": "http://www.google.com.hk/?gws_rd=cr"
+                        },
+                        {
+                            "name": "User-Agent",
+                            "value": "Mozilla/5.0 (Macintosh; Intel Mac OS X) AppleWebKit/538.1 (KHTML, like Gecko) PhantomJS/2.1.1 Safari/538.1"
+                        },
+                        {
+                            "name": "Accept",
+                            "value": "*/*"
+                        }
+                    ],
+                    "queryString": [],
+                    "headersSize": -1,
+                    "bodySize": -1
+                },
+                "response": {
+                    "status": 200,
+                    "statusText": "OK",
+                    "httpVersion": "HTTP/1.1",
+                    "cookies": [],
+                    "headers": [
+                        {
+                            "name": "Content-Type",
+                            "value": "image/png"
+                        },
+                        {
+                            "name": "Vary",
+                            "value": "Origin"
+                        },
+                        {
+                            "name": "Date",
+                            "value": "Sat, 18 Jun 2016 09:57:01 GMT"
+                        },
+                        {
+                            "name": "Expires",
+                            "value": "Sun, 18 Jun 2017 09:57:01 GMT"
+                        },
+                        {
+                            "name": "Last-Modified",
+                            "value": "Thu, 21 Apr 2016 03:17:22 GMT"
+                        },
+                        {
+                            "name": "X-Content-Type-Options",
+                            "value": "nosniff"
+                        },
+                        {
+                            "name": "Server",
+                            "value": "sffe"
+                        },
+                        {
+                            "name": "Content-Length",
+                            "value": "9760"
+                        },
+                        {
+                            "name": "X-XSS-Protection",
+                            "value": "1; mode=block"
+                        },
+                        {
+                            "name": "Cache-Control",
+                            "value": "public, max-age=31536000"
+                        },
+                        {
+                            "name": "Age",
+                            "value": "2097734"
+                        }
+                    ],
+                    "redirectURL": "",
+                    "headersSize": -1,
+                    "bodySize": 1146,
+                    "content": {
+                        "size": 1146,
+                        "mimeType": "image/png"
+                    }
+                },
+                "cache": {},
+                "timings": {
+                    "blocked": 0,
+                    "dns": -1,
+                    "connect": -1,
+                    "send": 0,
+                    "wait": 518,
+                    "receive": 21,
+                    "ssl": -1
+                },
+                "pageref": "https://www.google.com"
+            },
+            {
+                "startedDateTime": "2016-07-12T16:39:15.452Z",
+                "time": 295,
+                "request": {
+                    "method": "GET",
+                    "url": "http://www.google.com.hk/images/branding/googlelogo/1x/googlelogo_white_background_color_272x92dp.png",
+                    "httpVersion": "HTTP/1.1",
+                    "cookies": [],
+                    "headers": [
+                        {
+                            "name": "Referer",
+                            "value": "http://www.google.com.hk/?gws_rd=cr"
+                        },
+                        {
+                            "name": "User-Agent",
+                            "value": "Mozilla/5.0 (Macintosh; Intel Mac OS X) AppleWebKit/538.1 (KHTML, like Gecko) PhantomJS/2.1.1 Safari/538.1"
+                        },
+                        {
+                            "name": "Accept",
+                            "value": "*/*"
+                        }
+                    ],
+                    "queryString": [],
+                    "headersSize": -1,
+                    "bodySize": -1
+                },
+                "response": {
+                    "status": 200,
+                    "statusText": "OK",
+                    "httpVersion": "HTTP/1.1",
+                    "cookies": [],
+                    "headers": [
+                        {
+                            "name": "Content-Type",
+                            "value": "image/png"
+                        },
+                        {
+                            "name": "Date",
+                            "value": "Tue, 12 Jul 2016 16:39:15 GMT"
+                        },
+                        {
+                            "name": "Expires",
+                            "value": "Tue, 12 Jul 2016 16:39:15 GMT"
+                        },
+                        {
+                            "name": "Cache-Control",
+                            "value": "private, max-age=31536000"
+                        },
+                        {
+                            "name": "Last-Modified",
+                            "value": "Thu, 03 Sep 2015 02:05:27 GMT"
+                        },
+                        {
+                            "name": "X-Content-Type-Options",
+                            "value": "nosniff"
+                        },
+                        {
+                            "name": "Server",
+                            "value": "sffe"
+                        },
+                        {
+                            "name": "Content-Length",
+                            "value": "5482"
+                        },
+                        {
+                            "name": "X-XSS-Protection",
+                            "value": "1; mode=block"
+                        }
+                    ],
+                    "redirectURL": "",
+                    "headersSize": -1,
+                    "bodySize": 1189,
+                    "content": {
+                        "size": 1189,
+                        "mimeType": "image/png"
+                    }
+                },
+                "cache": {},
+                "timings": {
+                    "blocked": 0,
+                    "dns": -1,
+                    "connect": -1,
+                    "send": 0,
+                    "wait": 282,
+                    "receive": 13,
+                    "ssl": -1
+                },
+                "pageref": "https://www.google.com"
+            },
+            {
+                "startedDateTime": "2016-07-12T16:39:15.467Z",
+                "time": 831,
+                "request": {
+                    "method": "GET",
+                    "url": "http://www.google.com.hk/images/nav_logo229.png",
+                    "httpVersion": "HTTP/1.1",
+                    "cookies": [],
+                    "headers": [
+                        {
+                            "name": "Referer",
+                            "value": "http://www.google.com.hk/?gws_rd=cr"
+                        },
+                        {
+                            "name": "User-Agent",
+                            "value": "Mozilla/5.0 (Macintosh; Intel Mac OS X) AppleWebKit/538.1 (KHTML, like Gecko) PhantomJS/2.1.1 Safari/538.1"
+                        },
+                        {
+                            "name": "Accept",
+                            "value": "*/*"
+                        }
+                    ],
+                    "queryString": [],
+                    "headersSize": -1,
+                    "bodySize": -1
+                },
+                "response": {
+                    "status": 200,
+                    "statusText": "OK",
+                    "httpVersion": "HTTP/1.1",
+                    "cookies": [],
+                    "headers": [
+                        {
+                            "name": "Content-Type",
+                            "value": "image/png"
+                        },
+                        {
+                            "name": "Date",
+                            "value": "Tue, 12 Jul 2016 16:39:15 GMT"
+                        },
+                        {
+                            "name": "Expires",
+                            "value": "Tue, 12 Jul 2016 16:39:15 GMT"
+                        },
+                        {
+                            "name": "Cache-Control",
+                            "value": "private, max-age=31536000"
+                        },
+                        {
+                            "name": "Last-Modified",
+                            "value": "Thu, 03 Sep 2015 20:37:18 GMT"
+                        },
+                        {
+                            "name": "X-Content-Type-Options",
+                            "value": "nosniff"
+                        },
+                        {
+                            "name": "Server",
+                            "value": "sffe"
+                        },
+                        {
+                            "name": "Content-Length",
+                            "value": "17284"
+                        },
+                        {
+                            "name": "X-XSS-Protection",
+                            "value": "1; mode=block"
+                        }
+                    ],
+                    "redirectURL": "",
+                    "headersSize": -1,
+                    "bodySize": 1172,
+                    "content": {
+                        "size": 1172,
+                        "mimeType": "image/png"
+                    }
+                },
+                "cache": {},
+                "timings": {
+                    "blocked": 0,
+                    "dns": -1,
+                    "connect": -1,
+                    "send": 0,
+                    "wait": 603,
+                    "receive": 228,
+                    "ssl": -1
+                },
+                "pageref": "https://www.google.com"
+            },
+            {
+                "startedDateTime": "2016-07-12T16:39:15.503Z",
+                "time": 1347,
+                "request": {
+                    "method": "GET",
+                    "url": "http://www.google.com.hk/xjs/_/js/k=xjs.hp.en_US.6DINnzS7r10.O/m=sb_he,d/rt=j/d=1/t=zcms/rs=ACT90oHJl5hK6Z6PEZpF7aVu_WGBu9pWig",
+                    "httpVersion": "HTTP/1.1",
+                    "cookies": [],
+                    "headers": [
+                        {
+                            "name": "Accept",
+                            "value": "*/*"
+                        },
+                        {
+                            "name": "Referer",
+                            "value": "http://www.google.com.hk/?gws_rd=cr"
+                        },
+                        {
+                            "name": "User-Agent",
+                            "value": "Mozilla/5.0 (Macintosh; Intel Mac OS X) AppleWebKit/538.1 (KHTML, like Gecko) PhantomJS/2.1.1 Safari/538.1"
+                        }
+                    ],
+                    "queryString": [],
+                    "headersSize": -1,
+                    "bodySize": -1
+                },
+                "response": {
+                    "status": 200,
+                    "statusText": "OK",
+                    "httpVersion": "HTTP/1.1",
+                    "cookies": [],
+                    "headers": [
+                        {
+                            "name": "Vary",
+                            "value": "Accept-Encoding"
+                        },
+                        {
+                            "name": "Content-Encoding",
+                            "value": "gzip"
+                        },
+                        {
+                            "name": "Content-Type",
+                            "value": "text/javascript; charset=UTF-8"
+                        },
+                        {
+                            "name": "Date",
+                            "value": "Thu, 30 Jun 2016 19:19:57 GMT"
+                        },
+                        {
+                            "name": "Expires",
+                            "value": "Fri, 30 Jun 2017 19:19:57 GMT"
+                        },
+                        {
+                            "name": "Last-Modified",
+                            "value": "Wed, 29 Jun 2016 21:10:09 GMT"
+                        },
+                        {
+                            "name": "X-Content-Type-Options",
+                            "value": "nosniff"
+                        },
+                        {
+                            "name": "Server",
+                            "value": "sffe"
+                        },
+                        {
+                            "name": "X-XSS-Protection",
+                            "value": "1; mode=block"
+                        },
+                        {
+                            "name": "Cache-Control",
+                            "value": "public, max-age=31536000"
+                        },
+                        {
+                            "name": "Age",
+                            "value": "1027158"
+                        }
+                    ],
+                    "redirectURL": "",
+                    "headersSize": -1,
+                    "bodySize": 2124,
+                    "content": {
+                        "size": 2124,
+                        "mimeType": "text/javascript; charset=UTF-8"
+                    }
+                },
+                "cache": {},
+                "timings": {
+                    "blocked": 0,
+                    "dns": -1,
+                    "connect": -1,
+                    "send": 0,
+                    "wait": 592,
+                    "receive": 755,
+                    "ssl": -1
+                },
+                "pageref": "https://www.google.com"
+            }
+        ]
+    }
+}

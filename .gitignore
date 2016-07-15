@@ -1,0 +1,13 @@
+logs/*
+!.gitkeep
+node_modules/
+bower_components/
+tmp
+.DS_Store
+.idea
+obj
+ExpressApp1.njsproj
+phantomjs/pic
+public/img
+public/pic
+public/build
