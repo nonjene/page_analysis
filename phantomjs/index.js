@@ -18,21 +18,27 @@ exports.getShot = function (data, cb) {
         })
         .then(outData => {
             //Optimize images
-            let out = getImgReport(outData.summary.list.reduce((prev, next) => {
-                if (!next) { return prev; }
-                if (rImg.test(next.type)) {
-                    //很小的图片忽略
-                    if (next.size < 1) {
-                        return prev;
-                    }
-                    return [next.url, ...prev];
+            return new Promise((resolve, reject)=> {
+                getImgReport(
+                    outData.summary.list.reduce((prev, next) => {
+                        //有item是null的情况。
+                        if (!next) { return prev; }
+                        if (rImg.test(next.type)) {
+                            //很小的图片忽略
+                            if (next.size < 1) {
+                                return prev;
+                            }
+                            return [next.url, ...prev];
 
-                } else {
-                    return prev;
-                }
-            }, []));
-            outData.analysis.push(out);
-            return outData;
+                        } else {
+                            return prev;
+                        }
+                    }, []),
+                    imgReport=> {
+                        outData.analysis.push(imgReport);
+                        resolve(outData);
+                    });
+            });
         })
         .then(outData => {
             cb(outData);
