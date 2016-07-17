@@ -60,18 +60,5 @@ app.use(function (err, req, res, next) {
 });
 
 
-var process = require('child_process');
-//process.exec('casperjs cas.js', function (error, stdout, stderr) {
-//    if (error !== null) {
-//       return console.log('exec error: ' + error);
-//    }
-//    console.log(stdout)
-//})
-process.exec('phantomjs loadspeed.js http://www.google.com', function (error, stdout, stderr) {
-    if (error !== null) {
-        return console.log('exec error: ' + error);
-    }
-    console.log(stdout)
-})
 
 module.exports = app;
