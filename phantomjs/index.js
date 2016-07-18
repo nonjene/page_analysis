@@ -45,7 +45,7 @@ exports.getShot = function (data, cb) {
             return outData;
         })
         .then(outData => {
-            fs.writeFile('./public/build/result_' + Date.now() + '.txt', JSON.stringify(outData));
+            fs.writeFile('./public/build/result_' + Date.now() + '.json', JSON.stringify(outData));
             return outData;
         })
         .catch(err => console.log(err));
