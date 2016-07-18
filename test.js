@@ -5,6 +5,6 @@ shell
     .run('phantomjs phantomjs/sample/loadspeed.js https://www.baidu.com')
 
     .then(stdout=>{
-        fs.writeFile('./confess.txt',stdout);
+        console.log(stdout)
     })
     .catch(err=>console.log(err));

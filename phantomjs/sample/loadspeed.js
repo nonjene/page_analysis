@@ -18,7 +18,7 @@ if (system.args.length === 1) {
             console.log('Page title is ' + page.evaluate(function () {
                     return document.title;
                 }));
-
+            console.log('Loading time ' + t + ' msec');
         }
         phantom.exit();
     });
