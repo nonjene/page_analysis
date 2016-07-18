@@ -22,7 +22,7 @@ const getDateHour = function () {
     return (new Date()).toISOString().split(':')[0];
 };
 const getFileSize = function (file) {
-    return Promise((resolve, reject)=> {
+    return new Promise((resolve, reject)=> {
         fs.stat(file, (err, stats)=> {
             if (err !== null) {
                 return reject(err);
@@ -36,18 +36,19 @@ const getFileSize = function (file) {
 
 exports.getImgReport = function (aLinks, cb) {
     //console.log(aLink)
-    var folderName = getDateHour() + (Math.random() * 1000 | 0);
-    var localOriFolder = PublicFolder + 'img/ori/' + folderName + '/';
-    var outputFolder = PublicFolder + 'img/opt/' + folderName + '/';
-    var allOriImgSize = 0,
-        allOptImgSize = 0;
+    const folderName = getDateHour() + (Math.random() * 1000 | 0);
+    const localOriFolder = PublicFolder + 'img/ori/' + folderName + '/';
+    const outputFolder = PublicFolder + 'img/opt/' + folderName + '/';
+    var allOriImgSize = 0;
 
     mkdirs(localOriFolder);
     mkdirs(outputFolder);
 
     var aImgOptimize = aLinks.map(link => {
-        let fileName = path.basename(link).split('?')[0];
-        let oriFullPath = localOriFolder + fileName;
+        const fileName = path.basename(link).split('?')[0];
+        const oriFullPath = localOriFolder + fileName;
+        const optFullPath = outputFolder + fileName;
+
         return new Promise((resolve, reject)=> {
             download(link, oriFullPath)
                 .then(() => {
@@ -59,25 +60,33 @@ exports.getImgReport = function (aLinks, cb) {
                 })
                 .then(buffer => {
                     console.log('optimize done');
-                    return getFileSize(outputFolder + fileName);
+                    return getFileSize(optFullPath);
                 })
-                .then(size=> resolve(size))
+                .then(size=> resolve({
+                    size,
+                    optFullPath
+                }))
                 .catch(e=>reject(e));
         });
     });
-    Promise.all(aImgOptimize).then(aOptSizes=> {
-        allOptImgSize = aOptSizes.reduce((pre, next)=> pre + next);
+    Promise.all(aImgOptimize).then(aOptInfo=> {
+        const allOptImgSize = aOptInfo.reduce((pre, next)=> pre + next.size, 0);
+        const allOptImg = aOptInfo.reduce((pre, next)=> [next.optFullPath, ...pre], []);
 
-        zip(outputFolder, zipFullPath=> {
+        const zipName = outputFolder.slice(0, -1)+'.zip';
+
+        zip(allOptImg, zipName, zipFullPath=> {
             return cb && cb({
+                    slug: 'image',
+                    desc: '图片优化度',
                     allOriImgSize,
                     allOptImgSize,
-                    score: allOptImgSize / allOriImgSize,
+                    score: (allOptImgSize / allOriImgSize * 100) | 0,
                     zip: zipFullPath.substr(PublicFolder.length)
                 });
         })
 
 
-    })
+    }).catch(e=>console.log(e));
 
 };

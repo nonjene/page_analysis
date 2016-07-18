@@ -1,23 +1,51 @@
-/**
- * Created by Nonjene on 16/7/18.
- */
+/*
+ *
+ const fs = require('fs');
+ var JSZip = require("jszip");
+
+
+ module.exports = function (folder, cb) {
+ var zipFullPath = folder.replace(/\/$/, '') + '.zip';
+ var zip = new JSZip();
+ zip.folder(folder);
+ // this call will create photos/README
+ //zip.file("README", "a folder with photos");
+
+ zip.generateNodeStream({type: 'nodebuffer', streamFiles: true})
+ .pipe(fs.createWriteStream(zipFullPath))
+ .on('finish', function () {
+ // JSZip generates a readable stream with a "end" event,
+ // but is piped here in a writable stream which emits a "finish" event.
+ console.log("out.zip written.");
+ cb(zipFullPath);
+ });
+ };
+ *
+ * */
+
 const fs = require('fs');
-var JSZip = require("jszip");
+const path = require('path');
+const archiver = require('archiver');
 
+module.exports = function (aFiles, saveAs, cb) {
+    const output = fs.createWriteStream(saveAs);
 
-module.exports = function(folder,cb){
-    var zipFullPath = folder.replace(/\/$/, '') + '.zip';
-    var zip = new JSZip();
-    zip.folder(folder);
-    // this call will create photos/README
-    //zip.file("README", "a folder with photos");
+    const archive = archiver('zip');
 
-    zip.generateNodeStream({type: 'nodebuffer', streamFiles: true})
-        .pipe(fs.createWriteStream(zipFullPath))
-        .on('finish', function () {
-            // JSZip generates a readable stream with a "end" event,
-            // but is piped here in a writable stream which emits a "finish" event.
-            console.log("out.zip written.");
-            cb(zipFullPath);
-        });
+    output.on('close', function () {
+        console.log('zip done!');
+    });
+
+    archive.on('error', function (err) {
+        throw err;
+    });
+
+    archive.pipe(output);
+
+    aFiles
+        .reduce((archive, file)=>archive.append(fs.createReadStream(file), {
+            name: path.basename(file)
+        }), archive)
+        .finalize();
+
 };
