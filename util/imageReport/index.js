@@ -75,14 +75,14 @@ exports.getImgReport = function (aLinks, cb) {
 
         const zipName = outputFolder.slice(0, -1)+'.zip';
 
-        zip(allOptImg, zipName, zipFullPath=> {
+        zip(allOptImg, zipName, ()=> {
             return cb && cb({
                     slug: 'image',
                     desc: '图片优化度',
                     allOriImgSize,
                     allOptImgSize,
                     score: (allOptImgSize / allOriImgSize * 100) | 0,
-                    zip: zipFullPath.substr(PublicFolder.length)
+                    zip: zipName.substr(PublicFolder.length)
                 });
         })
 

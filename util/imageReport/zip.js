@@ -34,6 +34,7 @@ module.exports = function (aFiles, saveAs, cb) {
 
     output.on('close', function () {
         console.log('zip done!');
+        return cb && cb();
     });
 
     archive.on('error', function (err) {
