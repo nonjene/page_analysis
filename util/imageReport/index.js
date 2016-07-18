@@ -82,7 +82,7 @@ exports.getImgReport = function (aLinks, cb) {
                     allOriImgSize,
                     allOptImgSize,
                     score: (allOptImgSize / allOriImgSize * 100) | 0,
-                    zip: zipName.substr(PublicFolder.length)
+                    zip: '/'+zipName.substr(PublicFolder.length)
                 });
         })
 

@@ -2,6 +2,8 @@ import React from "react";
 import {RadioGroup, Radio} from 'react-radio-group';
 import DataList from './DataList';
 import Summary from './Summary';
+import ImageResult from './ImageResult';
+
 
 const Size = {
     iphone: { width: 375, height: 667 },
@@ -158,6 +160,9 @@ export class App extends React.Component {
 
                 <div style={styles.block}>
                     <Summary summary={this.state.resData.summary.summary}/>
+                </div>
+                <div style={styles.block}>
+                    <ImageResult analysis={this.state.resData.analysis} />
                 </div>
                 <div style={styles.block}>
                     <DataList list={this.state.resData.summary.list}/>
