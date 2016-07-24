@@ -80,6 +80,16 @@ page.onLoadFinished = function (status) {
 };
 page.onInitialized = function () {
     var sonInitialized = Date.now();//这个居然比onLoadStarted还短，文档没说清
+    var width = _Data.size[option.device].width,
+        height = _Data.size[option.device].height;
+
+    page.evaluate(function (w, h) {
+        document.body.style.width = w + "px";
+        document.body.style.height = h + "px";
+        document.body.style.overflow = 'auto';
+    }, width, height);
+    page.clipRect = {top: 0, left: 0, width: width, height: height};
+
     domReady(page, function (t, data) {
         _debug('DOMContentLoaded_onInitialized:' + (t - sonInitialized) + 'ms');
         _debug('DOMContentLoaded_evaluate:' + (t - data.t) + 'ms');
@@ -89,7 +99,7 @@ page.onInitialized = function () {
 
         //console.log(data)
 
-        screenShot(page, [0, 200, 400, 600, 1000, 1500], 'pic/ready_', function (picName) {
+        screenShot(page, [0, 500, 1000, 1500], 'pic/ready_', function (picName) {
             fPushPicInfo(picName, oHar.DOMContentLoaded);
 
         });
