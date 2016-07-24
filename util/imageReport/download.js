@@ -3,11 +3,12 @@ const fs = require('fs');
 
 module.exports = function (uri, filename) {
     return new Promise((resolve, reject) => {
-        request.head(uri, function (err, res, body) {
-            console.log('content-type:', res.headers['content-type']);
+        request.head(uri, function () {
+            /*console.log('content-type:', res.headers['content-type']);
             console.log('content-length:', res.headers['content-length']);
-
-            request(uri).pipe(fs.createWriteStream(filename)).on('close', function () {
+*/
+            request(uri).pipe(fs.createWriteStream(filename)).on('close', function (err) {
+                if(err) return reject(err);
                 resolve();
             });
         });

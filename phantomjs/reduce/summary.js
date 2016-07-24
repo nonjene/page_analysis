@@ -129,7 +129,12 @@ module.exports = function (page, evt) {
         });
 
         var list = resources.map(function (resource) {
-            var type = resource.responses.end.contentType.split('/')[1].split(';')[0];
+            var type;
+            try{
+                type = resource.responses.end.contentType.split('/')[1].split(';')[0];
+            }catch(e){
+                type = '-'
+            }
             
             return {
                 id: resource.id,

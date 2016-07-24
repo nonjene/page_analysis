@@ -44,9 +44,13 @@ module.exports = function (aFiles, saveAs, cb) {
     archive.pipe(output);
 
     aFiles
-        .reduce((archive, file)=>archive.append(fs.createReadStream(file), {
-            name: path.basename(file)
-        }), archive)
+        .reduce((archive, file)=>{
+            if(!file) return archive;
+            
+            return archive.append(fs.createReadStream(file), {
+                name: path.basename(file)
+            })
+        }, archive)
         .finalize();
 
 };

@@ -39,7 +39,6 @@ exports.getImgReport = function (aLinks, cb) {
     const folderName = getDateHour() + (Math.random() * 1000 | 0);
     const localOriFolder = PublicFolder + 'img/ori/' + folderName + '/';
     const outputFolder = PublicFolder + 'img/opt/' + folderName + '/';
-    var allOriImgSize = 0;
 
     mkdirs(localOriFolder);
     mkdirs(outputFolder);
@@ -52,9 +51,6 @@ exports.getImgReport = function (aLinks, cb) {
         return new Promise((resolve, reject)=> {
             download(link, oriFullPath)
                 .then(() => {
-                    getFileSize(oriFullPath).then(size=>allOriImgSize += size);
-                })
-                .then(() => {
                     //console.log('optimize run');
                     return optimize([oriFullPath], outputFolder);
                 })
@@ -62,15 +58,29 @@ exports.getImgReport = function (aLinks, cb) {
                     console.log('optimize done');
                     return getFileSize(optFullPath);
                 })
-                .then(size=> resolve({
-                    size,
+                .then(optSize=> ({
+                    optSize,
                     optFullPath
                 }))
-                .catch(e=>reject(e));
+                .then(info=>{
+                    getFileSize(oriFullPath).then(oriSize=>resolve(
+                        Object.assign({},info,{oriSize})
+                    ));
+
+                })
+                .catch(e=>{
+                    console.log(e);
+                    resolve({
+                        oriSize:0,
+                        optSize:0,
+                        optFullPath: null
+                    })
+                });
         });
     });
     Promise.all(aImgOptimize).then(aOptInfo=> {
-        const allOptImgSize = aOptInfo.reduce((pre, next)=> pre + next.size, 0);
+        const allOptImgSize = aOptInfo.reduce((pre, next)=> pre + next.optSize, 0);
+        const allOriImgSize = aOptInfo.reduce((pre, next)=> pre + next.oriSize, 0);
         const allOptImg = aOptInfo.reduce((pre, next)=> [next.optFullPath, ...pre], []);
 
         const zipName = outputFolder.slice(0, -1)+'.zip';

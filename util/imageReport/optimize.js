@@ -1,5 +1,5 @@
 const imagemin = require('imagemin');
-const imageminMozjpeg = require('imagemin-mozjpeg');
+const imageminJpegtran = require('imagemin-jpegtran');
 const imageminPngquant = require('imagemin-pngquant');
 
 
@@ -7,7 +7,7 @@ module.exports = function (aFile, outputFolder) {
     //['images/*.{jpg,png}']
     return imagemin(aFile, outputFolder, {
         plugins: [
-            imageminMozjpeg({ targa: true }),
+            imageminJpegtran(),
             imageminPngquant({ quality: '65-80' })
         ]
     });
